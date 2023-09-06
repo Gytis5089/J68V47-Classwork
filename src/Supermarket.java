@@ -4,25 +4,31 @@ public class Supermarket {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Item 1 Name:");
-        String item1Name = input.next();
-        System.out.print("Item 1 Price:");
-        Float item1Price = input.nextFloat();
+        System.out.print("Amount of Items:");
+        Integer itemAmount = input.nextInt();
+        String[] itemNames = new String[itemAmount];
+        Float[] itemPrices = new Float[itemAmount];
+        Float totalPrice = 0F;
 
-
-        System.out.print("\nItem 2 Name:");
-        String item2Name = input.next();
-        System.out.print("Item 2 Price:");
-        Float item2Price = input.nextFloat();
-
-        System.out.print("\nItem 3 Name:");
-        String item3Name = input.next();
-        System.out.print("Item 3 Price:");
-        Float item3Price = input.nextFloat();
+        for (Integer i = 0; i < itemAmount; i++) {
+            if (i > 0) {
+                System.out.println("");
+            }
+            System.out.print("Item " + (i + 1) + " Name:");
+            String itemName = input.next();
+            itemNames[i] = itemName;
+            System.out.print(itemName + " Price:");
+            Float itemPrice = input.nextFloat();
+            itemPrices[i] = itemPrice;
+            totalPrice += itemPrice;
+        }
 
         System.out.println("\n\n\nG-Mart");
-        System.out.println(item1Name + "..........£" + item1Price);
-        System.out.println(item2Name + "..........£" + item2Price);
-        System.out.println(item3Name + "..........£" + item3Price);
+
+        for (Integer i = 0; i < itemAmount; i++) {
+            System.out.println(itemNames[i] + "..........£" + itemPrices[i]);
+        }
+
+        System.out.println("Total..........£" + totalPrice);
     }
 }
