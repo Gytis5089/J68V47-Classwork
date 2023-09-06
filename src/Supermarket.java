@@ -9,6 +9,7 @@ public class Supermarket {
         String[] itemNames = new String[itemAmount];
         Float[] itemPrices = new Float[itemAmount];
         Float totalPrice = 0F;
+        Integer[] charLens = new Integer[itemAmount];
 
         for (Integer i = 0; i < itemAmount; i++) {
             System.out.print("\nItem " + (i + 1) + " Name:");
@@ -18,14 +19,23 @@ public class Supermarket {
             Float itemPrice = input.nextFloat();
             itemPrices[i] = itemPrice;
             totalPrice += itemPrice;
+            charLens[i] = itemName.length();
+        }
+
+        Integer longestLen = 0;
+
+        for (Integer i = 0; i < itemAmount; i++) {
+            if (charLens[i] > longestLen) {
+                longestLen = charLens[i];
+            }
         }
 
         System.out.println("\n\nG-Mart");
 
         for (Integer i = 0; i < itemAmount; i++) {
-            System.out.println(itemNames[i] + "..........£" + itemPrices[i]);
+            System.out.println(itemNames[i] + (".".repeat(longestLen - itemNames[i].length() + 5)) + "£" + itemPrices[i]);
         }
 
-        System.out.println("Total..........£" + totalPrice);
+        System.out.println("Total" + (".".repeat(longestLen)) + "£" + Math.round(totalPrice));
     }
 }
