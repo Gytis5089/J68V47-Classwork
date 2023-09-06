@@ -33,6 +33,7 @@ public class Supermarket {
         System.out.println("\n\nG-Mart");
 
         for (Integer i = 0; i < itemAmount; i++) {
+            // Take the longest character, remove the current item length, add 5 and repeat the dot that amount of times (it works (source: trust me))
             System.out.println(itemNames[i] + (".".repeat(longestLen - itemNames[i].length() + 5)) + "£" + itemPrices[i]);
         }
 
