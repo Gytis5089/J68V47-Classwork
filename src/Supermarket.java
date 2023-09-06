@@ -11,10 +11,7 @@ public class Supermarket {
         Float totalPrice = 0F;
 
         for (Integer i = 0; i < itemAmount; i++) {
-            if (i > 0) {
-                System.out.println("");
-            }
-            System.out.print("Item " + (i + 1) + " Name:");
+            System.out.print("\nItem " + (i + 1) + " Name:");
             String itemName = input.next();
             itemNames[i] = itemName;
             System.out.print(itemName + " Price:");
@@ -23,7 +20,7 @@ public class Supermarket {
             totalPrice += itemPrice;
         }
 
-        System.out.println("\n\n\nG-Mart");
+        System.out.println("\n\nG-Mart");
 
         for (Integer i = 0; i < itemAmount; i++) {
             System.out.println(itemNames[i] + "..........£" + itemPrices[i]);
