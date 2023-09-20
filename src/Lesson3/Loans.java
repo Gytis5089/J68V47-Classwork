@@ -1,3 +1,5 @@
+package Lesson3;
+
 import java.util.Scanner;
 
 public class Loans {
@@ -16,6 +18,7 @@ public class Loans {
         Integer L = cost;
         Integer j = (interest / 100) / 12;
         Integer n = years * 12;
+        // Code not worky (am silly) ((no literally, I have no clue what I'm doing))
         Double monthly = L * (j / (1 - Math.pow(1+j, -n)));
 
         // outputs

@@ -1,3 +1,5 @@
+package Lesson1;
+
 public class Haikus {
     public static void main(String[] args) {
         //hakiuwus

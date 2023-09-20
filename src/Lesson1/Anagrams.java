@@ -1,3 +1,5 @@
+package Lesson1;
+
 public class Anagrams {
     public static void main(String[] args) {
         //anagrams
