@@ -7,19 +7,20 @@ public class Loans {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Loan Cost (£):");
-        Integer cost = input.nextInt();
+        int cost = input.nextInt();
         System.out.println("Interest Rate (%):");
-        Integer interest = input.nextInt();
+        int interest = input.nextInt();
         System.out.println("Years:");
-        Integer years = input.nextInt();
+        int years = input.nextInt();
 
         // calculations
         // M = L( j / (1 - (1+j)^-n ) )
-        Integer L = cost;
-        Integer j = (interest / 100) / 12;
-        Integer n = years * 12;
+        int L = cost;
+        float j = ((float)interest / 100) / 12;
+        int n = years * 12;
+        System.out.format("%d %.6f %d",L, j, n);
         // Code not worky (am silly) ((no literally, I have no clue what I'm doing))
-        Double monthly = L * (j / (1 - Math.pow(1+j, -n)));
+        double monthly = L * (j / (1 - Math.pow(1+j, -n)));
 
         // outputs
         System.out.println("\nThis Loan Will Cost £" + monthly + "/Month");
