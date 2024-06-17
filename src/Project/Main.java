@@ -66,7 +66,7 @@ public class Main {
 
 
 
-            Object obj = parser.parse(new FileReader("db.json"));
+            Object obj = parser.parse(new FileReader("src/Project/db.json"));
             JSONObject data = (JSONObject) obj;
 
             String player1name = user1.name;
@@ -150,7 +150,7 @@ public class Main {
             }
 
             JSONArray player2wins = new JSONArray();
-            for (Object el : player1games) {
+            for (Object el : player2games) {
                 JSONArray game = (JSONArray) el;
                 if (game.get(0).equals(0)) {
                     player2wins.add(game);
@@ -213,7 +213,7 @@ public class Main {
             }
 
             JSONArray player3wins = new JSONArray();
-            for (Object el : player1games) {
+            for (Object el : player3games) {
                 JSONArray game = (JSONArray) el;
                 if (game.get(0).equals(0)) {
                     player3wins.add(game);
@@ -291,15 +291,15 @@ public class Main {
             System.out.println("Custom Team Statistics:\nTeam Win Probability " + teampercentage + "%\n(Retrieved from raw percentages, not the rounded/displayed ones, so may look off when doing the math yourself)");
             if (user1.gameswith1 > 0) {
                 //user1 x user2
-                System.out.println("\n" + user1.name + " & " + user2.name + " have some chemistry\nThey have played a total of " + user1.gameswith1 + " Games together,\n" + user1.winswith1 + " of which they won");
+                System.out.println("\n" + user1.name + " & " + user2.name + " have some chemistry\nThey have played a total of " + user1.gameswith1 + " Game(s) together,\n" + user1.winswith1 + " of which they won");
             }
             if (user1.gameswith2 > 0) {
                 //user1 x user3
-                System.out.println("\n" + user1.name + " & " + user3.name + " have some chemistry\nThey have played a total of " + user1.gameswith2 + " Games together,\n" + user1.winswith2 + " of which they won");
+                System.out.println("\n" + user1.name + " & " + user3.name + " have some chemistry\nThey have played a total of " + user1.gameswith2 + " Game(s) together,\n" + user1.winswith2 + " of which they won");
             }
             if (user2.gameswith1 > 0) {
                 //user2 x user3
-                System.out.println("\n" + user2.name + " & " + user3.name + " have some chemistry\nThey have played a total of " + user2.gameswith1 + " Games together,\n" + user2.winswith1 + " of which they won");
+                System.out.println("\n" + user2.name + " & " + user3.name + " have some chemistry\nThey have played a total of " + user2.gameswith1 + " Game(s) together,\n" + user2.winswith1 + " of which they won");
             }
 
             User[] users = {user1, user2, user3};
